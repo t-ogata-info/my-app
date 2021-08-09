@@ -1,0 +1,7 @@
+{
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "."
+  }
+}
