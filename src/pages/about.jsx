@@ -5,9 +5,7 @@ import { Header } from 'src/components/Header'
 import { Main } from 'src/components/Main'
 import styles from 'src/styles/Home.module.css'
 
-export default function About({
-doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd,
-}) {
+const About = (props) => {
 
   return (
     <div className={styles.container}>
@@ -17,17 +15,17 @@ doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, hand
       </Head>
       <Header />
 
-      {isShow ? <h1>{doubleCount}</h1> : null}
-      <button onClick={handleClick}>ボタン</button>
-      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      {props.isShow ? <h1>{props.doubleCount}</h1> : null}
+      <button onClick={props.handleClick}>ボタン</button>
+      <button onClick={props.handleDisplay}>{props.isShow ? "非表示" : "表示"}</button>
 
 
-      <input type="text" value={text}
-      onChange = {handleChange}
+      <input type="text" value={props.text}
+      onChange = {props.handleChange}
       />
-      <button onClick={handleAdd}>追加</button>
+      <button onClick={props.handleAdd}>追加</button>
       <ul>
-        {array.map(item => {
+        {props.array.map(item => {
           return (
             <li key={item}>{item}</li>
           )
@@ -40,3 +38,5 @@ doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, hand
     </div>
   );
 }
+
+export default About;
