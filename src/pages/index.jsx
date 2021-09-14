@@ -4,18 +4,17 @@ import styles from 'src/styles/Home.module.css'
 import {Footer} from "src/components/Footer"
 import { Main } from 'src/components/Main'
 import { Header } from 'src/components/Header'
-import { useCounter } from 'hooks/useCounter'
-import { useInputArray } from 'hooks/useInputArray'
-import { useBgLightBlue } from 'hooks/useBgLightBlue'
 
 
-export default function Home() {
 
-  const {count, isShow, handleClick, handleDisplay} = useCounter();
+export default function Home(props) {
 
-  const {text, array, handleChange, handleAdd } = useInputArray();
+  console.log(props);
 
-  useBgLightBlue();
+  const {
+  count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd
+  } = props;
+
 
 
 
